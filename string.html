@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label for="first">First</label>
+<input type="text" id="first" name="first" placeholder="first">
+<input type="text" id="second" name="second">
+<input type="text" id="result" name="result" readonly>
+
+<button id="length" onclick="performOperation(this.id)"> length</button><br>
+<button id="slice" onclick="performOperation(this.id)"> slice()</button> <p>Banana (new one) (7,13) Apple, Banana, Kiwi</p><br>  
+<button id="substring" onclick="performOperation(this.id)"> substring()</button><br>
+<button id="substr" onclick="performOperation(this.id)"> substr()</button><br>
+<button id="replace" onclick="performOperation(this.id)"> replace()</button><br>
+<button id="replaceAll" onclick="performOperation(this.id)"> replaceAll()</button><br>
+<button id="toUpperCase" onclick="performOperation(this.id)"> toUpperCase()</button><br>
+<button id="toLowerCase" onclick="performOperation(this.id)"> toLowerCase()</button><br>
+<button id="concat" onclick="performOperation(this.id)"> concat()</button><br>
+<button id="trim" onclick="performOperation(this.id)"> trim()</button><br>
+<button id="trimStart" onclick="performOperation(this.id)"> trimStart()</button><br>
+<button id="trimEnd" onclick="performOperation(this.id)"> trimEnd()</button><br>
+<button id="padStart" onclick="performOperation(this.id)"> padStart()</button><br>
+<button id="padEnd" onclick="performOperation(this.id)"> padEnd()</button><br>
+<button id="charAt" onclick="performOperation(this.id)"> charAt()</button><br>
+<button id="charCodeAt" onclick="performOperation(this.id)"> charCodeAt()</button><br>
+<button id="split" onclick="performOperation(this.id)"> split()</button>
+
+<script>
+function performOperation(operation) {
+    var first = document.getElementById('first').value;
+    var second = document.getElementById('second').value;
+    var result;
+
+    switch(operation) {
+        case 'length':
+            result = first.length + second.length;
+            break;
+        case 'slice':
+            result = first.slice(second);
+            break;
+        case 'substring':
+            result = first.substring(second);
+            break;
+        case 'substr':
+            result = first.substr(second);
+            break;
+        case 'replace':
+            result = first.replace(second, " ");
+            break;
+        case 'replaceAll':
+            result = first.replaceAll(second, " ");
+            break;
+        case 'toUpperCase':
+            result = first.toUpperCase();
+            break;
+        case 'toLowerCase':
+            result = first.toLowerCase();
+            break;
+        case 'concat':
+            result = first.concat(second);
+            break;
+        case 'trim':
+            result = first.trim();
+            break;
+        case 'trimStart':
+            result = first.trimStart();
+            break;
+        case 'trimEnd':
+            result = first.trimEnd();
+            break;
+        case 'padStart':
+            result = first.padStart(second);
+            break;
+        case 'padEnd':
+            result = first.padEnd(second);
+            break;
+        case 'charAt':
+            result = first.charAt(second);
+            break;
+        case 'charCodeAt':
+            result = first.charCodeAt(second);
+            break;
+        case 'split':
+            result = first.split(second);
+            break;
+    }
+
+    document.getElementById('result').value = result;
+}
+</script>
+
+</body>
+</html>
