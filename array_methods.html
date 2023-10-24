@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<label for="first">Array</label>
+<input type="text" id="first" name="first" placeholder="Enter comma-separated values">
+<input type="text" id="second" name="second">
+<input type="text" id="result" name="result" readonly>
+
+<button id="length" onclick="performOperation(this.id)"> length</button><br>
+<button id="push" onclick="performOperation(this.id)"> push()</button><br>
+<button id="pop" onclick="performOperation(this.id)"> pop()</button><br>
+<button id="shift" onclick="performOperation(this.id)"> shift()</button><br>
+<button id="unshift" onclick="performOperation(this.id)"> unshift()</button><br>
+<button id="concat" onclick="performOperation(this.id)"> concat()</button><br>
+<button id="join" onclick="performOperation(this.id)"> join()</button><br>
+<button id="slice" onclick="performOperation(this.id)"> slice()</button><br>
+<button id="splice" onclick="performOperation(this.id)"> splice()</button><br>
+<button id="sort" onclick="performOperation(this.id)"> sort()</button><br>
+<button id="reverse" onclick="performOperation(this.id)"> reverse()</button>
+
+<script>
+function performOperation(operation) {
+    var first = document.getElementById('first').value.split(',');
+    var second = document.getElementById('second').value;
+    var result;
+
+    switch(operation) {
+        case 'length':
+            result = first.length;
+            break;
+        case 'push':
+            result = first.push(second);
+            break;
+        case 'pop':
+            result = first.pop();
+            break;
+        case 'shift':
+            result = first.shift();
+            break;
+        case 'unshift':
+            result = first.unshift(second);
+            break;
+        case 'concat':
+            result = first.concat(second.split(','));
+            break;
+        case 'join':
+            result = first.join(second);
+            break;
+        case 'slice':
+            var indices = second.split(',');
+            result = first.slice(indices[0], indices[1]);
+            break;
+        case 'splice':
+            var params = second.split(',');
+            result = first.splice(params[0], params[1], params.slice(2));
+            break;
+        case 'sort':
+            result = first.sort();
+            break;
+        case 'reverse':
+            result = first.reverse();
+            break;
+    }
+
+    document.getElementById('result').value = result.toString();
+}
+</script>
+
+</body>
+</html>
