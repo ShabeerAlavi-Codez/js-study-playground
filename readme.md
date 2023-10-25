@@ -1,6 +1,6 @@
-### JS Array and String methods study playground
+## JS Array and String methods study playground
 
-## String Methods (17 ITEMS)
+### String Methods (17 ITEMS)
 - length
 - slice()
 - substring()
@@ -19,7 +19,7 @@
 - charCodeAt()
 - split()
 
-## Array Methods (12 ITEMS)
+### Array Methods (12 ITEMS)
 
 - length
 - toString()
